@@ -1,0 +1,19 @@
+spring:
+  application:
+    name:  ${SPRING_APPLICATION_NAME:vecure-discovery-service}
+
+  cloud:
+    discovery:
+      enabled: true
+      client:
+        serviceUrl:
+          defaultZone: http://localhost:8761/eureka/ # URL for Eureka Server
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/ # Eureka server URL
+  instance:
+    prefer-ip-address: true # Optional: Use the IP address for the instance instead of hostname
+    lease-expiration-duration-in-seconds: 10 # Optional: How long to wait before considering the instance expired
+    lease-renewal-interval-in-seconds: 5 # Optional: How often the instance renews its lease

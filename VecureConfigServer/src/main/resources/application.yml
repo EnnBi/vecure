@@ -1,0 +1,21 @@
+server:
+  port: ${CONFIG_SERVER_PORT:8888}
+  http2.enabled: ${HTTP2_ENABLE:true}
+
+spring:
+  profiles:
+    active: native, vault
+  application:
+    name: vecure-config-server
+  cloud:
+    config:
+      server:
+        native:
+          searchLocations: classpath:/messages
+        vault:
+          port: ${VAULT_SERVER_PORT:8200}
+          host: ${VAULT_SERVER_HOST:127.0.0.1}
+          scheme: http
+          authentication: TOKEN
+          token: ${VAULT_SERVER_TOKEN}
+          kv-version: 2
