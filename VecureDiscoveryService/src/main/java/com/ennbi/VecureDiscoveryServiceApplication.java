@@ -1,4 +1,4 @@
-package com.ennbi.VecureDiscoveryService;
+package com.ennbi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

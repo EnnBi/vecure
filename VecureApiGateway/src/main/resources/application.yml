@@ -1,0 +1,24 @@
+server:
+  port: 8085
+    
+spring:
+  application:
+    name: ${SPRING_APPLICATION_NAME:vecure-api-gateway}  # The name of your client service
+  cloud:
+    discovery:
+      enabled: true  # Enable discovery client (Eureka client)
+    eureka:
+      client:
+        serviceUrl:
+          defaultZone: http://admin:password@localhost:8761/eureka/  # Include Eureka server URL with basic authentication
+        fetchRegistry: true  # Enable fetching the registry of services
+        registerWithEureka: true  # Enable registering the client with Eureka
+      instance:
+        lease-renewal-interval-in-seconds: 10  # Time interval for renewing the lease with Eureka
+        lease-expiration-duration-in-seconds: 30  # Duration until the service is marked as expired if it doesn't renew
+        
+logging:
+  level:
+    com.netflix.discovery: DEBUG
+    org.springframework.cloud.netflix.eureka: DEBUG
+    org.springframework.web.client: DEBUG  # For logging HTTP requests/responses

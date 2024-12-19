@@ -5,3 +5,8 @@ VecureConfigServer/.mvn/wrapper/maven-wrapper.properties
 VecureDiscoveryService/.mvn/wrapper/maven-wrapper.properties
 VecureDiscoveryService/mvnw
 VecureDiscoveryService/mvnw.cmd
+VecureApiGateway/mvnw.cmd
+VecureApiGateway/mvnw
+VecureApiGateway/.mvn/wrapper/maven-wrapper.properties
+VecureApiGateway/.gitattributes
+/.metadata/
