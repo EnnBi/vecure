@@ -1,7 +1,11 @@
 spring:
   application:
     name:  ${SPRING_APPLICATION_NAME:vecure-discovery-service}
-
+  security:
+    basic.enabled: true
+    user:
+      name: ${EUREKA_USERNAME:admin}
+      password: ${EUREKA_PASSWORD:password}
   cloud:
     discovery:
       enabled: true
@@ -17,3 +21,13 @@ eureka:
     prefer-ip-address: true # Optional: Use the IP address for the instance instead of hostname
     lease-expiration-duration-in-seconds: 10 # Optional: How long to wait before considering the instance expired
     lease-renewal-interval-in-seconds: 5 # Optional: How often the instance renews its lease
+server:
+  port: 8761
+  error.whitelabel.enabled: false
+  http2.enabled: ${HTTP2_ENABLE:true}
+    
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
